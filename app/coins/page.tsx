@@ -75,7 +75,7 @@ export default function CoinsPage() {
     <main className="min-h-screen bg-gradient-to-b from-background via-blue-950/50 to-background py-12">
       <div className="container mx-auto px-4">
         <div className="flex flex-col gap-6 mb-8">
-          <div className="flex items-center justify-between">
+          <div className="flex items-center max-[433px]:flex-col justify-between">
             <Link href="/">
               <Button variant="ghost" className="gap-2">
                 <ArrowLeft className="h-4 w-4" /> Back to Home

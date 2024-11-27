@@ -6,6 +6,7 @@ import { Crypto } from "@/lib/api";
 import { formatCurrency, formatLargeNumber } from "@/lib/utils";
 import { LineChart, Line, XAxis, YAxis, Tooltip, ResponsiveContainer } from "recharts";
 import { Info } from "lucide-react";
+import Image from "next/image";
 
 interface CryptoDetailsProps {
   crypto: Crypto;
@@ -27,7 +28,7 @@ export function CryptoDetails({ crypto }: CryptoDetailsProps) {
       <DialogContent className="max-w-2xl">
         <DialogHeader>
           <DialogTitle className="flex items-center gap-2">
-            <img src={crypto.image} alt={crypto.name} className="w-8 h-8" />
+            <Image src={crypto.image} alt={crypto.name} width={24} height={24} />
             {crypto.name} ({crypto.symbol.toUpperCase()})
           </DialogTitle>
         </DialogHeader>

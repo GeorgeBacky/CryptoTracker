@@ -6,6 +6,7 @@ import { LineChart, Line, ResponsiveContainer } from "recharts";
 import { formatCurrency } from "@/lib/utils";
 import { CryptoDetails } from "@/components/crypto-details";
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 interface CryptoCardProps {
   crypto: Crypto;
@@ -27,7 +28,7 @@ export function CryptoCard({ crypto, index }: CryptoCardProps) {
         <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
           <CardTitle className="text-sm font-medium">
             <div className="flex items-center gap-2">
-              <img src={crypto.image} alt={crypto.name} className="w-6 h-6" />
+              <Image src={crypto.image} alt={crypto.name} width={24} height={24} />
               <span>{crypto.name}</span>
               <span className="text-muted-foreground">({crypto.symbol.toUpperCase()})</span>
             </div>
