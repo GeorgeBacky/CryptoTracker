@@ -3,6 +3,7 @@
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import { TrendingUp, ArrowRight, Globe } from "lucide-react";
+import Link from "next/link";
 
 export function HeroSection() {
   return (
@@ -22,12 +23,11 @@ export function HeroSection() {
               Get real-time cryptocurrency prices, market insights, and portfolio tracking tools all in one place.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-              <Button size="lg" className="bg-blue-600 hover:bg-blue-700">
-                Get Started <ArrowRight className="ml-2 h-5 w-5" />
-              </Button>
-              <Button size="lg" variant="outline">
-                <Globe className="mr-2 h-5 w-5" /> Explore Markets
-              </Button>
+              <Link href='/coins'>
+                <Button size="lg" variant="outline">
+                  <Globe className="mr-2 h-5 w-5" /> Explore Markets
+                </Button>
+              </Link>
             </div>
           </div>
           <div className="flex-1 relative">

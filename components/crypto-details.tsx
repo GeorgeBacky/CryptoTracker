@@ -14,7 +14,7 @@ interface CryptoDetailsProps {
 
 export function CryptoDetails({ crypto }: CryptoDetailsProps) {
   const sparklineData = crypto.sparkline_in_7d?.price.map((price, index) => ({
-    value: price,
+    value: price.toFixed(2),
     day: `Day ${index + 1}`
   })) || [];
 
@@ -53,7 +53,7 @@ export function CryptoDetails({ crypto }: CryptoDetailsProps) {
                   type="monotone"
                   dataKey="value"
                   stroke={crypto.price_change_percentage_24h && crypto.price_change_percentage_24h > 0 ? '#22c55e' : '#ef4444'}
-                  strokeWidth={2}
+                  strokeWidth={1}
                 />
               </LineChart>
             </ResponsiveContainer>

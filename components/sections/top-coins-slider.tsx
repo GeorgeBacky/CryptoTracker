@@ -12,6 +12,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { formatCurrency } from "@/lib/utils";
 import { motion } from "framer-motion";
 import { LineChart, Line, ResponsiveContainer } from "recharts";
+import Image from "next/image";
 
 interface TopCoinsSliderProps {
   coins: Crypto[];
@@ -42,7 +43,7 @@ export function TopCoinsSlider({ coins }: TopCoinsSliderProps) {
                   <Card className="bg-card/50 backdrop-blur-sm border-muted hover:border-blue-500/50 transition-colors">
                     <CardContent className="p-6">
                       <div className="flex items-center gap-3 mb-4">
-                        <img src={coin.image} alt={coin.name} className="w-8 h-8" />
+                        <Image src={coin.image} alt={coin.name} width={24} height={24} />
                         <div>
                           <h3 className="font-semibold">{coin.name}</h3>
                           <p className="text-sm text-muted-foreground">{coin.symbol.toUpperCase()}</p>
@@ -81,8 +82,6 @@ export function TopCoinsSlider({ coins }: TopCoinsSliderProps) {
               </CarouselItem>
             ))}
           </CarouselContent>
-          <CarouselPrevious />
-          <CarouselNext />
         </Carousel>
       </div>
     </div>
